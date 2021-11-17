@@ -1,4 +1,4 @@
-# React Component Generator by amcgunagle
+# React Component Quick Build by amcgunagle
 
 One method to help you quickly create a new directory with two files - one with a template for a new React component, the other a file for the component's accompanying CSS module.
 
