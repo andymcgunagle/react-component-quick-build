@@ -1,0 +1,23 @@
+{
+  "name": "react-component-quick-build",
+  "version": "1.0.0",
+  "description": "One method to help you quickly create a new directory with two files - one with a template for a new React component, the other a file for the component's accompanying CSS module.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "keywords": [
+    "react",
+    "generator",
+    "template",
+    "javascript",
+    "css",
+    "modules"
+  ],
+  "author": "amcgunagle",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
