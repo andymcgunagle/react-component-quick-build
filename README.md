@@ -4,7 +4,7 @@ One method to help you quickly create a new directory with two files - one with 
 
 ## Installation
 
-npm i react-component-quick-build --save-dev
+`npm i react-component-quick-build --save-dev`
 
 ## generateNewComponent method
 
@@ -14,7 +14,7 @@ Creates a new directory with two files - one with a template for a new React com
 
 #### template
 
-An object with `componentName` and, optionally, `firstElementType` and `firstElementClassName`. Additional details regarding the template parameter's properties can be found below in the [template parameter properties](#template-parameter-properties) section below.
+An object with `componentName` and, optionally, `firstElementType` and `firstElementClassName`. Additional details regarding the template parameter's properties can be found below in [template parameter properties](#template-parameter-properties).
 
 ```javascript
 reactComponentGenerator.generateNewComponent({
@@ -26,20 +26,20 @@ reactComponentGenerator.generateNewComponent({
 
 ## template parameter properties
 
-- `template.componentName`: The name of the new component. This will also be the name of the new directory and the name of the CSS module file.
+- `template.componentName`: The name of the new component. This will also be the name of the new directory, component file, and CSS module file.
 
-- `template.firstElementType`: Optional parameter specifying the type of the first element returned by the new component. For example, if you want the component template to contain a div element, this property would be set to `div`
+- `template.firstElementType`: Optional parameter specifying the type of the first element returned by the new component. For example, if you want the component to contain a div element, this property would be set to the string `div`.
 
-- `template.firstElementClassName`: Optional parameter specifying the className of the first element returned by the new component. If this property is a string, the classname will be in the format of `className={style.yourStringHere}`. If this property is set to true, the classname will be in the format of `className={style.componentNameWrapper}` and that class will be created in the CSS module file.
+- `template.firstElementClassName`: Optional parameter specifying the className of the first element returned by the new component. If this property is a string, the classname will be in the format of `className={styles.yourStringHere}`. If this property is set to true, the classname will be in the format of `className={styles.componentNameWrapper}` and a CSS selector for that class will be created in the CSS module file.
 
 ## Example output
 
 Let's say we have the following in **reactComponentGenerator.js**:
 
 ```javascript
-import reactComponentGenerator from 'react-component-quick-build';
+import { generateNewComponent } from 'react-component-quick-build';
 
-reactComponentGenerator.generateNewComponent({
+generateNewComponent({
   componentName: 'MyNewComponent',
   firstElementType: 'div',
   firstElementClassName: true,
@@ -57,7 +57,7 @@ export default function MyNewComponent() {
 }
 ```
 
-Running `node reactComponentGenerator.js` would also produce a CSS module file named **MyNewComponent.module.css** linked to the new component file and, since firstElementClassName is set to true, the file would contain the following:
+This would also produce CSS module file named **MyNewComponent.module.css** linked to the new component file. Since firstElementClassName is set to true in this example, the file would contain the following CSS selector:
 
 ```CSS
 .myNewComponentWrapper {
