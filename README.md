@@ -30,7 +30,7 @@ reactComponentGenerator.generateNewComponent({
 
 - `template.firstElementType`: Optional parameter specifying the type of the first element returned by the new component. For example, if you want the component template to contain a div element, this property would be set to `div`
 
-- `template.firstElementClassName`: Optional parameter specifying the className of the first element returned by the new component. If this property is a string, the classname will be in the format of `className={style.yourStringHere}`. If this property is set to true, the classname will be in the format of `className={style.componentNameWrapper}`.
+- `template.firstElementClassName`: Optional parameter specifying the className of the first element returned by the new component. If this property is a string, the classname will be in the format of `className={style.yourStringHere}`. If this property is set to true, the classname will be in the format of `className={style.componentNameWrapper}` and that class will be created in the CSS module file.
 
 ## Example output
 
@@ -57,7 +57,12 @@ export default function MyNewComponent() {
 }
 ```
 
-Running `node reactComponentGenerator.js` would also produce a blank CSS module file named **MyNewComponent.module.css** linked to the new component file.
+Running `node reactComponentGenerator.js` would also produce a CSS module file named **MyNewComponent.module.css** linked to the new component file and, since firstElementClassName is set to true, the file would contain the following:
+
+```CSS
+.myNewComponentWrapper {
+}
+```
 
 ## ES modules
 
