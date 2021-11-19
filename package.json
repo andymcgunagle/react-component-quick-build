@@ -1,6 +1,6 @@
 {
   "name": "react-component-quick-build",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "One method to help you quickly create a new directory with two files - one with a template for a new React component, the other a file for the component's accompanying CSS module.",
   "main": "index.js",
   "type": "module",
