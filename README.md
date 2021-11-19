@@ -6,18 +6,18 @@ One method to help you quickly create a new directory with two files - one with 
 
 npm i react-component-quick-build --save-dev
 
-## createNewComponent method
+## generateNewComponent method
 
 Creates a new directory with two files - one with a template for a new React component, the other a file for the component's accompanying CSS module.
 
-### createNewComponent method parameters
+### generateNewComponent method parameters
 
 #### template
 
 An object with `componentName` and, optionally, `firstElementType` and `firstElementClassName`. Additional details regarding the template parameter's properties can be found below in the [template parameter properties](#template-parameter-properties) section below.
 
 ```javascript
-reactComponentGenerator.createNewComponent({
+reactComponentGenerator.generateNewComponent({
   componentName: 'MyNewComponent',
   firstElementType: 'div',
   firstElementClassName: true,
@@ -39,7 +39,7 @@ Let's say we have the following in **reactComponentGenerator.js**:
 ```javascript
 import reactComponentGenerator from 'react-component-quick-build';
 
-reactComponentGenerator.createNewComponent({
+reactComponentGenerator.generateNewComponent({
   componentName: 'MyNewComponent',
   firstElementType: 'div',
   firstElementClassName: true,

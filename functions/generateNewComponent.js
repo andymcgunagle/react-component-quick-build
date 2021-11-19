@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
-import createComponentTemplate from './createComponentTemplate.js';
-import createCSSModuleTemplate from './createCSSModuleTemplate.js';
+import createComponent from './createComponent.js';
+import createCSSModule from './createCSSModule.js';
 
 /**
  * Creates a new dir with two files - one with a template for a new React component, the other a file for the component's accompanying CSS module. 
@@ -13,17 +13,17 @@ import createCSSModuleTemplate from './createCSSModuleTemplate.js';
  * - If this property is a string, the classname will be in the format of `className={style.yourStringHere}`. 
  * - If this property is set to true, the classname will be in the format of `className={style.componentNameWrapper}`. 
  * @example 
- * createNewComponent({
+ * generateNewComponent({
  *   componentName: 'MyNewComponent',
  *   firstElementType: 'div',
  *   firstElementClassName: true,
  * });
  */
-export const createNewComponent = async (template) => {
+export const generateNewComponent = async (template) => {
 
-  const componentFileText = createComponentTemplate(template);
+  const component = createComponent(template);
 
-  const CSSModuleFileText = createCSSModuleTemplate(template);
+  const CSSModule = createCSSModule(template);
 
   const { componentName } = template;
 
@@ -36,11 +36,11 @@ export const createNewComponent = async (template) => {
   };
 
   try {
-    await fs.writeFile(`./${componentName}/${componentName}.jsx`, componentFileText);
-    await fs.writeFile(`./${componentName}/${componentName}.module.css`, CSSModuleFileText);
+    await fs.writeFile(`./${componentName}/${componentName}.jsx`, component);
+    await fs.writeFile(`./${componentName}/${componentName}.module.css`, CSSModule);
   } catch (error) {
     console.error(error);
   };
 };
 
-export default createNewComponent;
+export default generateNewComponent;

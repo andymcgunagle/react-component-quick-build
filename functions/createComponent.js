@@ -1,6 +1,6 @@
 import createFirstElement from './createFirstElement.js';
 
-export const createComponentTemplate = (template) => {
+export const createComponent = (template) => {
   const {
     componentName,
     firstElementType
@@ -17,4 +17,4 @@ export const createComponentTemplate = (template) => {
   );
 };
 
-export default createComponentTemplate;
+export default createComponent;

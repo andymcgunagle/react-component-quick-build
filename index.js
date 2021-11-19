@@ -1,7 +1,7 @@
-import createNewComponent from "./createComponentFunctions/createNewComponent.js";
+import generateNewComponent from "./functions/generateNewComponent.js";
 
 const reactComponentGenerator = {
-  createNewComponent,
+  generateNewComponent,
 };
 
 export default reactComponentGenerator;
