@@ -1,9 +1,11 @@
+import firstLetterToLowerCase from './firstLetterToLowerCase.js';
+
 export const createCSSModule = (template) => {
   const { componentName, firstElementClassName } = template;
 
   if (firstElementClassName === true) {
     return (
-      `.${componentName}Wrapper {\n` +
+      `.${firstLetterToLowerCase(componentName)}Wrapper {\n` +
       `  \n` +
       `}\n`
     );
