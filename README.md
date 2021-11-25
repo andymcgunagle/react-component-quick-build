@@ -37,9 +37,9 @@ reactComponentGenerator.generateNewComponent({
 Let's say we have the following in **reactComponentGenerator.js**:
 
 ```javascript
-import { generateNewComponent } from 'react-component-quick-build';
+import reactComponentGenerator from 'react-component-quick-build';
 
-generateNewComponent({
+reactComponentGenerator.generateNewComponent({
   componentName: 'MyNewComponent',
   firstElementType: 'div',
   firstElementClassName: true,
